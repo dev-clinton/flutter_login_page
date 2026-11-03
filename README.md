@@ -1,17 +1,33 @@
-# login_app
+# CEE – Personal Account Application
 
-A new Flutter project.
+CEE is a simple Flutter-based account management application developed as a student project.
 
-## Getting Started
+## Features
+- User registration
+- User login and logout
+- Password hashing
+- Local account storage
+- Clean and simple user interface
 
-This project is a starting point for a Flutter application.
+## Technologies Used
+- Flutter
+- Dart
+- SQLite
+- Cryptography
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+### Login Page
+![CEE Login Page](login.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Registration Page
+![CEE Registration Page](register.png)
+
+### Home Page
+![CEE Home Page](home.png)
+
+## Developer
+Davidson Clinton Onochie
+
+## Project Status
+Working demonstration version.
