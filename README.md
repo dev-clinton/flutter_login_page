@@ -1,6 +1,6 @@
 # CEE – Personal Account Application
 
-CEE is a simple Flutter-based account management application developed as a student project.
+CEE is a simple Flutter-based application developed as a student project.
 
 ## Features
 - User registration
@@ -14,20 +14,3 @@ CEE is a simple Flutter-based account management application developed as a stud
 - Dart
 - SQLite
 - Cryptography
-
-## Screenshots
-
-### Login Page
-![CEE Login Page](login.png)
-
-### Registration Page
-![CEE Registration Page](register.png)
-
-### Home Page
-![CEE Home Page](home.png)
-
-## Developer
-Davidson Clinton Onochie
-
-## Project Status
-Working demonstration version.
