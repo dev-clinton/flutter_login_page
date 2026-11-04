@@ -1,92 +1,32 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'screens/auth_gate.dart';
+import 'theme/cee_theme.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    );
+  if (kIsWeb) {
+    databaseFactory = databaseFactoryFfiWeb;
   }
+
+  runApp(const CeeApp());
 }
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class CeeApp extends StatelessWidget {
+  const CeeApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF5F7FB),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(25),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(Icons.lock, size: 65, color: Colors.blue),
-
-              const SizedBox(height: 20),
-
-              const Text(
-                'Welcome Back!',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              const SizedBox(height: 10),
-
-              const Text('Sign in to continue'),
-
-              const SizedBox(height: 30),
-
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email Address',
-                  prefixIcon: Icon(Icons.email),
-                  border: OutlineInputBorder(),
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              const TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  prefixIcon: Icon(Icons.lock),
-                  border: OutlineInputBorder(),
-                ),
-              ),
-
-              const SizedBox(height: 25),
-
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Login button clicked'),
-                      ),
-                    );
-                  },
-                  child: const Text('LOGIN'),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    return MaterialApp(
+      title: 'CEE',
+      debugShowCheckedModeBanner: false,
+      theme: CeeTheme.dark,
+      home: const AuthGate(),
     );
   }
 }
